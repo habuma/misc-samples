@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'jetty'
+apply plugin: 'eclipse-wtp'
+
+version = '3.1.0'
+
+configurations.compile.transitive = true
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework:spring-aspects:3.1.1.RELEASE"
+    compile "org.springframework.webflow:spring-webflow:2.3.1.RELEASE"
+    compile "org.springframework.webflow:spring-binding:2.3.1.RELEASE"
+    compile "log4j:log4j:1.2.13"
+    compile "ognl:ognl:2.6.9"
+    compile "org.aspectj:aspectjweaver:1.6.6"
+    compile "commons-lang:commons-lang:2.4"
+    providedCompile "javax.servlet.jsp.jstl:jstl-api:1.2"
+    compile "org.glassfish.web:jstl-impl:1.2"
+    providedCompile "javax.servlet:servlet-api:2.5"
+    providedCompile "javax.servlet.jsp:javax.servlet.jsp-api:2.2.1"
+    testCompile "junit:junit:4.7"
+    testCompile "org.mockito:mockito-all:1.8.0"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.0'
+}

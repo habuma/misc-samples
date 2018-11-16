@@ -1,0 +1,40 @@
+body {
+	font-family: arial, sans-serif;
+}
+
+.disclaimer {
+	font-style: italic;
+	font-size: 8pt;
+}
+
+.routeEntry {
+	height: 101px;
+	width: 800px;
+	border: 2px solid #244980;
+	margin-bottom: 10px;
+	background-color: #8faefc;
+}
+
+.routeTime {
+	padding-top: 15px;
+	position: absolute;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #244980;
+	height: 86px;
+	width: 150px;
+	color: #ffffff;
+	border-right: 1px solid #244980;
+}
+
+.routeSteps {
+	width: 600px;
+	position: absolute;
+	margin-left: 160px;
+	height: 120;
+}
+
+.routeMinutes {
+	display: block;
+	font-size: 24pt;
+}

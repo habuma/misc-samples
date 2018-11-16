@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<title>MousePortation</title>
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="routes.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+		<link rel="stylesheet" href="theme.css" />
+	</head>
+
+	<body ng-controller="Routes">
+		<div>
+			<form>
+				<label>Travel from </label>
+				<select ng-model="search.origin" ng-options="place.abbreviation as place.name for place in places" ng-change="searchRoutes()"></select>
+				<label>to</label>
+				<select ng-model="search.destination" ng-options="place.abbreviation as place.name for place in places" ng-change="searchRoutes()"></select><br/>
+				<label>Show at most</label>
+				<select ng-model="search.limit" ng-change="searchRoutes()">
+					<option value="5">5</option>
+					<option value="10">10</option>
+					<option value="100000">all</option>
+				</select><label>routes</label>
+			</form>
+			<p class="disclaimer"><b>NOTE</b>: All times are approximate and do not include wait or transfer time. Some routes may involve multiple stops.</p>
+			<hr/>
+		</div>
+		<div ng-show="routes.length == 0">
+			<p>I don't know any routes for the selected locations.</p>
+		</div>
+		<div ng-show="routes.length > 0" class="routesList">
+			<div ng-repeat="route in routes" class="routeEntry">
+				<div class="routeTime">Total time <span class="routeMinutes">{{route.totalTime}}</span> minutes</div>
+				<div class="routeSteps">
+					<ol>
+						<li ng-repeat="segment in route.segments">
+							<b>{{segment.mode}}</b> from {{segment.start.name}} to {{segment.end.name}} ({{segment.time}} minutes)
+						</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

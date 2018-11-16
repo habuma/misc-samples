@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+jar {
+    from 'dist'
+    eachFile { details ->
+        details.path = details.path.startsWith('META-INF') ?: 'static/'+details.path
+    }
+    includeEmptyDirs = false
+}
+
+task bower(type:Exec) {
+	workingDir './dist'
+	commandLine 'bower', 'install'
+}
+
+jar.dependsOn bower

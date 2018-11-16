@@ -1,0 +1,11 @@
+{
+  "name": "mouseportation-client",
+  "description": "Client app for Mouseportation API",
+  "version": "0.1.0",
+  "homepage": "http://www.mouseguests.com",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x"
+  }
+}

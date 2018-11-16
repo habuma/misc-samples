@@ -1,0 +1,10 @@
+spring:
+  data:
+    cassandra:
+      keyspace-name: libros
+      schema-action: recreate
+      
+
+logging:
+  level:
+    org.springframework.data.cassandra: debug

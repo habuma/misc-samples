@@ -1,0 +1,5 @@
+resources:
+  projectroot:
+
+app:
+  version: 0.5
