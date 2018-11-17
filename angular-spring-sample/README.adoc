@@ -1,0 +1,23 @@
+= Spring/Angular Sample
+
+This is an example of an Angular web application that consumes a Spring REST API.
+
+The Angular portion of the application is a greatly simplified variation of the sample application built by Raju Gandhi (@looselytyped) in his Angular presentations at the 11/17/2017 NFJS Rocky Mountain Software Symposium in Denver, CO. Although Raju's example had a richer component tree and targeted a different domain, I developed the "People" sample as a simpler form as I was trying to follow along in his presentation.
+
+The Spring portion of the application is the server-side component I decided to write to back the Angular application. I developed it because I wanted to see what a combination Spring/Angular application would look like.
+
+To build the application:
+
+```
+$ ./mvnw clean package
+```
+
+To run the application:
+
+```
+$ java -jar backend/target/myapp-backend-0.0.1-SNAPSHOT.jar
+```
+
+There is nothing particularly special about the Spring portion of the application, other than that its pom.xml includes the WebJar produced by the Angular application's build so that it will be packaged along with the Spring application.
+
+As for the Angular application, its package.json specifies that the application be built into `dist/META-INF/resources` so that the resulting JAR will follow the form of a WebJar. The pom.xml also downloads and runs various Yarn commands to build the Angular application.

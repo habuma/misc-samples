@@ -1,0 +1,17 @@
+<section>
+  <table>
+    <thead>
+      <tr>
+        <td>id</td>
+        <td>first</td>
+        <td>last</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="people-row"
+          *ngFor="let p of people"
+          [person]=p>
+      </tr>
+    </tbody>
+  </table>
+</section>
